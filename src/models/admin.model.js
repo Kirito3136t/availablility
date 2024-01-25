@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 
-const adminSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
+const AdminSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true,
   },
   password: {
     type: String,
@@ -14,11 +12,20 @@ const adminSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
+  otp: {
+    type: String,
+    default: undefined,
+  },
+  sessions: [
+    {
+      token: String,
+      expiresAt: Number,
+    },
+  ],
   roles: {
     type: [String],
-    default: [],
+    default: ["admin"],
   },
   createdAt: {
     type: Date,
@@ -27,10 +34,9 @@ const adminSchema = new mongoose.Schema({
   updatedAt: {
     type: Date,
     default: Date.now,
-  },
+  }
 });
 
-// Define the Admin model using the schema
-const Admin = mongoose.model('Admin', adminSchema);
+const Admin = mongoose.model('Admin', AdminSchema);
 
-module.exports = Admin;
+module.exports.Admin = Admin;

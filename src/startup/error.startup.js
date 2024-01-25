@@ -1,11 +1,25 @@
-// using console her, instead try logging using a library like winston.
+const winston = require("winston");
+const Logger = require("../helpers/logger.helpers");
 
 module.exports = () => {
-  process.on("uncaughtException", (err) => {
-    console.log(err.message);
+  const logger = winston.createLogger({
+    level: process.env.LOG_LEVEL || "info",
+    format: winston.format.combine(
+      winston.format.timestamp({
+        format: "MMM-DD-YYYY HH:mm:ss",
+      }),
+      winston.format.prettyPrint(),
+    ),
+    transports: [new winston.transports.Console()],
+    exceptionHandlers: [
+      new winston.transports.File({ filename: "logs/exception.log" }),
+      new winston.transports.Console()
+    ],
+    rejectionHandlers: [
+      new winston.transports.File({ filename: "logs/rejections.log" }),
+      new winston.transports.Console()
+    ],
   });
-  process.on("unhandledRejection", (err) => {
-    console.log(err.message);
-  });
-  console.log("🚧 Error Handler Applied");
+  Logger.info("🚧 Error Handler Applied");
 };
+

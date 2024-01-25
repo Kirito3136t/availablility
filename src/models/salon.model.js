@@ -47,4 +47,4 @@ const salonSchema = new mongoose.Schema({
 // Define the Salon model using the schema
 const Salon = mongoose.model('Salon', salonSchema);
 
-module.exports = Salon;
+module.exports.Salon = Salon;

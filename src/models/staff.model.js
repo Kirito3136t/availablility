@@ -31,4 +31,4 @@ const staffSchema = new mongoose.Schema({
 // Define the Staff model using the schema
 const Staff = mongoose.model('Staff', staffSchema);
 
-module.exports = Staff;
+module.exports.Staff = Staff;

@@ -1,4 +1,4 @@
-const HttpError = require("../helpers/HttpError.helpers");
+const HttpError = require("../helpers/httpError.helpers");
 const Response = require("../helpers/response.helpers");
 // const { InventoryService } = require("../services/inventory.service");
 

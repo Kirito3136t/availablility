@@ -45,4 +45,4 @@ const partnerSchema = new mongoose.Schema({
 // Define the Partner model using the schema
 const Partner = mongoose.model('Partner', partnerSchema);
 
-module.exports = Partner;
+module.exports.Partner = Partner;

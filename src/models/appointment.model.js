@@ -39,4 +39,4 @@ const appointmentSchema = new mongoose.Schema({
 // Define the Appointments model using the schema
 const Appointment = mongoose.model('Appointment', appointmentSchema);
 
-module.exports = Appointment;
+module.exports.Appointment = Appointment;

@@ -5,6 +5,9 @@ const helmet = require("helmet"); // secures connection by adding additional hea
 const cors = require("cors"); // handling cors errors
 const ErrorHandler = require("../middlewares/error.middlewares"); // error handler for routes, since we will continue to next route upon request
 
+//logger
+const Logger = require("../helpers/logger.helpers");
+
 //Routers
 const { AdminRouter } = require("../routes/admin.routes");
 const { DashboardRouter } = require("../routes/dashboard.routes");
@@ -50,4 +53,4 @@ module.exports = (app) => {
   );
 };
 
-console.log("🛣️  Routes setup completed");
+Logger.info("🛣️  Routes setup completed");

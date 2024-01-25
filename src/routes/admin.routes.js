@@ -6,14 +6,16 @@ const router = express.Router();
 //get requests
 
 //post requests
+router.post('/register', AdminController.registerAdmin);
 router.post("/login",AdminController.loginAdmin)
-router.post("/forgetPassword/sendOtp",AdminController.sendOtp)
-router.post("/forgetPassword/verifyOtp",AdminController.verifyOtp)
+router.post("/sendOtp",AdminController.sendOtp)
+router.post("/verifyOtp",AdminController.verifyOtp)
+router.post("/:id",Auth,AdminController.logoutAdmin)
+router.post("/resetPassword",AdminController.resetPassword)
 
 //put requests
-router.post("/forgetPassword/resetPassword",AdminController.resetPassword)
-router.post("/update",Auth,AdminController.updateAdmin)
-router.post("/logout",Auth,AdminController.logoutAdmin)
+router.put("/:id",Auth,AdminController.updateAdmin)
+
 
 //delete requests
 

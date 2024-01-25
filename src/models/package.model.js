@@ -30,4 +30,4 @@ const packageSchema = new mongoose.Schema({
 // Define the Package model using the schema
 const Package = mongoose.model('Package', packageSchema);
 
-module.exports = Package;
+module.exports.Package = Package;

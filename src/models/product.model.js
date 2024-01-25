@@ -30,4 +30,4 @@ const productSchema = new mongoose.Schema({
 // Define the Product model using the schema
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product;
+module.exports.Product = Product;
