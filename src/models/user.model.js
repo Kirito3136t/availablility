@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  username: {
+  name: {
     type: String,
     required: true,
-    unique: true,
   },
   password: {
     type: String,
@@ -16,9 +14,10 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  mobileNo: {
-    type: String,
-    required: true,
+  phoneno:{
+    type:Number,
+    required:true,
+    unique:true
   },
   address: {
     type: String,
@@ -29,22 +28,22 @@ const userSchema = new mongoose.Schema({
     enum: ['Male', 'Female', 'Other'],
     required: true,
   },
-  active: {
-    type: Boolean,
-    default: true,
-  },
-  age: {
-    type: Number,
-    required: true,
-  },
-  DOB: {
-    type: Date,
-    required: true,
-  },
-  appointments: {
-    type: [mongoose.Schema.Types.ObjectId],
-    default: [],
-  },
+  // active: {
+  //   type: Boolean,
+  //   default: true,
+  // },
+  // age: {
+  //   type: Number,
+  //   required: true,
+  // },
+  // DOB: {
+  //   type: Date,
+  //   required: true,
+  // },
+  // appointments: {
+  //   type: [mongoose.Schema.Types.ObjectId],
+  //   default: [],
+  // },
   createdAt: {
     type: Date,
     default: Date.now,

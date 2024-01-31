@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Logger = require("../helpers/logger.helpers");
 const { DB_URI } = process.env;
 
+
 module.exports = () => {
   return mongoose
     .connect(DB_URI)

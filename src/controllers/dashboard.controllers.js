@@ -27,4 +27,3 @@ class DashboardController {
   }
   
   module.exports.DashboardController = new DashboardController();
-  
