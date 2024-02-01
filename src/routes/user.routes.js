@@ -11,13 +11,15 @@ router.get("/:id",Auth,UserController.getUser)
 
 //post requests
 router.post("/create",UserController.createUser)
-router.post("/sendOtp",UserController.sendOtp)
+router.post("/verifyOtp",UserController.verifyOtp)
+router.post("/resetPassword",UserController.resetPassword)
+router.post("/login",UserController.loginUser)
 
 //put requests
-router.put("/:id",Auth,UserController.updateUser)
+router.put("/:id",UserController.updateUser)
 
 //delete requests
-router.delete("/:id",Auth,UserController.deleteUser)
+router.delete("/delete",UserController.deleteUser)
 
 //customScripts
 

@@ -183,6 +183,7 @@ class AdminController {
     }
 
     const token = req.cookies.token;
+    console.log(token)
     if (!token) {
       throw new HttpError(400, "No session token found in the request");
     }
